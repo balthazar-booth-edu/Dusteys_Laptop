@@ -1,0 +1,85 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "mode": "dock",
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+
+    "modules-left": ["sway/workspaces", "sway/mode", "keyboard-state"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["network", "memory", "backlight", "pulseaudio", "power-profiles-daemon", "battery", "clock"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "keyboard-state": {
+        "capslock": true,
+        "numlock": false,
+        "scrolllock": false,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "CAPSL",
+            "unlocked": ""
+        }
+    },
+
+    "sway/window": {
+        "max-length": 40,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "Firefox",
+            "(.*) — Zen Browser": "Zen"
+        }
+    },
+
+    "network": {
+        "format-wifi": "{essid}",
+        "format-ethernet": "eth",
+        "format-disconnected": "offline",
+        "tooltip-format": "{ipaddr}",
+	"on-click": "bash ~/.local/share/wofi-wifi-menu/wofi-wifi-menu.sh",
+    "on-click-right": "nm-connection-editor"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "RAM {percentage}%",
+        "tooltip-format": "{used}GiB / {total}GiB used"
+    },
+
+    "backlight": {
+        "format": "BRI {percent}%"
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰝟",
+        "on-click": "pavucontrol"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "{profile}",
+        "format-icons": {
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰾆"
+        }
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "󱐋 {capacity}%",
+	"format-full": "{capacity}"
+    }
+},
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": " {:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
