@@ -1,0 +1,95 @@
+@define-color base #1e1e2e;
+@define-color yellow #f9e2af;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background: transparent;
+	box-shadow: none;
+   
+}
+
+#workspaces {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 12px;
+    padding: 2px 4px;
+    margin: 0 4px;
+    box-shadow: inset 0 0 0 1px rgba(88, 91, 112, 0.35);
+}
+
+#workspaces button {
+    background: transparent;
+    padding: 0 8px;
+    color: #6c7086;
+}
+
+#workspaces button.focused {
+    color: #9d7cd8;
+    font-weight: bold;
+}
+
+
+/* CAPSLOCK detector module */
+#keyboard-state,
+#keyboard-state > label {
+    padding: 0;
+    margin: 0;
+}
+
+#keyboard-state > label.locked {
+    padding: 2px 10px;
+    color: @base;
+    background-color: @yellow;
+    border-radius: 8px;
+}
+
+/* Purple Mode Module */
+#mode {
+    background: #9d7cd8;
+    color: #1e1e2e;
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-left: 8px;
+}
+
+#clock {
+
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 12px;
+    padding: 2px 10px;
+
+    
+}
+
+#window,
+#network,
+#memory,
+#backlight,
+#pulseaudio,
+#power-profiles-daemon,
+#battery {
+
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 12px;
+    padding: 2px 10px;
+    margin: 0 4px;
+    color: #cdd6f4;
+    box-shadow: inset 0 0 0 1px rgba(88, 91, 112, 0.35);
+
+}
+
+#battery.warning { color: #f9e2af; }
+#battery.critical { color: #f38ba8; }
